@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main
+public abstract class Main
 {
+
+
     public static void main(String[] args)
     {
         InputDevice input = new InputDevice();
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        System.out.println(input.readFruit());
+        input.readFruit();
 
     }
 }
