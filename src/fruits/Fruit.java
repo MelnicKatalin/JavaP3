@@ -2,12 +2,37 @@ package fruits;
 
 import java.util.ArrayList;
 
-abstract public class Fruit {
+abstract public class Fruit implements Comparable<Fruit>{
     private double weight;
     private double water_content;
     private double sugar_content;
     private Color color;
 
+    @Override
+    public int compareTo(Fruit fruit)
+    {
+        if(weight < fruit.weight)
+        {
+            return -1;
+        }
+        else if(weight > fruit.weight)
+        {
+            return 1;
+        }
+        else
+        {
+            if(sugar_content < fruit.getSugar_content())
+            {
+                return -1;
+            }
+            else if(sugar_content > fruit.getSugar_content())
+            {
+                return 1;
+            }
+            else
+                return 0;
+        }
+    }
 
     public double getSugar_content() {
         return sugar_content;

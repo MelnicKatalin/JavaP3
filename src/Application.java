@@ -1,9 +1,12 @@
+import fruits.Banana;
 import fruits.Fruit;
 import fruits.Peelable;
 import fruits.SeedRemovable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Application {
     InputDevice inputDevice;
@@ -64,7 +67,21 @@ public class Application {
             }
         }
     }
-
+    public Map<String, Integer> countFruit(ArrayList<Fruit> fruits)
+    {
+        Map<String, Integer> map = new HashMap<>();
+        for(Fruit f : fruits) {
+            if (!map.containsKey(f.getClass().toString()))
+            {
+                map.put(f.getClass().toString(), 1);
+            }
+            else
+            {
+                map.replace(f.getClass().toString(), map.get(f.getClass().toString()) + 1);
+            }
+        }
+        return map;
+    }
     public void run(){
 
         if (arg.equals("words")){
