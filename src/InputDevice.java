@@ -1,9 +1,11 @@
 import fruits.Apple;
 import fruits.Banana;
 import fruits.Fruit;
-import fruits.Mango;
-
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
+import fruits.Mango;
 
 public class InputDevice {
 
@@ -29,8 +31,10 @@ public class InputDevice {
         return rand.nextInt(100);
     }
 
-    public Fruit[] readFruit(){
-        return new Fruit[]{new Banana(15, 3, 6), new Banana(25, 19, 2),
-        new Apple(11, 4, 8, Fruit.Color.RED), new Mango(20, 4, 4, Fruit.Color.GREEN)};
+    public ArrayList<Fruit> readFruit(){
+        ArrayList<Fruit> fruits = new ArrayList<Fruit>;
+        Arrays.asList(new Banana(15, 3, 6), new Banana(25, 19, 2),
+        new Apple(11, 4, 8, Fruit.Color.RED), new Mango(20, 4, 4, Fruit.Color.GREEN));
+        return fruits;
     }
 }
