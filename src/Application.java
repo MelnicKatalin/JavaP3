@@ -15,6 +15,14 @@ public class Application {
         this.arg = arg;
     }
 
+    public void askUserForFile()
+    {
+        while(true)
+        {
+            String fileName = new InputDevice.getLine();
+        }
+    }
+
     private void sortNumbers(int[] numbers){
         Arrays.sort(numbers);
     }

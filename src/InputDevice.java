@@ -3,10 +3,19 @@ import fruits.Banana;
 import fruits.Fruit;
 import fruits.Mango;
 
+import java.io.InputStream;
 import java.util.Random;
+import java.util.Scanner;
 
 public class InputDevice {
 
+    Scanner scanner;
+    InputStream inputStream;
+    public InputDevice(InputStream inputStream)
+    {
+        this.inputStream = inputStream;
+        scanner = new Scanner(inputStream);
+    }
     public String getType(){
         return "random";
     }
@@ -21,7 +30,7 @@ public class InputDevice {
     }
 
     public String getLine() {
-        return "The quick brown fox jumps over the lazy dog";
+        return scanner.nextLine();
     }
 
     public int nextInt() {
